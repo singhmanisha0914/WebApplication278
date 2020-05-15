@@ -1,0 +1,23 @@
+<form class="form-inline well" action="/betting" method='post'>
+<table style="width:50%">
+    <tr>	
+        <th style="text-align:left"><label class="control-label" align="left">Current Total Win</label></th> 
+    </tr>
+	<tr>
+        <td style="text-align:right"><input id="Total Win"  align="right" type="Integer" name="sesTotalWin" value=<%= session[:win] %> readonly></td>
+	</tr>
+	<tr>
+	   <th style="text-align:left"><label class="control-label" align="left">Current Total Loss</label></th>
+	</tr>
+	<tr>
+	   <td style="text-align:right"><input id="Total Loss" type="Integer" name="sesTotalLoss" value=<%= session[:lost] %> readonly></td>
+	</tr>
+	<tr>
+	   <th style="text-align:left"><label class="control-label" align="left">Current Total Profit</label></th>
+	</tr>
+	<tr>
+	   <td style="text-align:right"><input id="Total Profit" type="Integer" name="sesTotalProfit" value=<%= session[:profit] %> readonly></td>
+	</tr>
+</table>
+</form>
+

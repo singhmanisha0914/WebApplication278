@@ -1,0 +1,38 @@
+<div class="bet-data-container">
+<form action="/betting" method='post'>
+	<table style="width:50%">
+	<tr>
+	  <td><label>Bet money </label></td>
+	  <td><input type="Integer" name="betAmount"/></td>
+	</tr>  
+	<tr>  
+	  <td><label>on </label></td>
+	  <td><input type="Integer" name="diceNumber" /></td>
+	</tr>  
+	<br>
+	<tr>
+	  <td></td>
+	  <td><input type="submit" name="bet" value="Bet" /></td>
+	</tr>
+	</table>
+	<br>
+	<% if $betPlaced %>
+	  <p align="middle">Your choice: <%= params[:diceNumber].to_i %> and the dice landed on <%= session[:diceLandedOn].to_i %> .</p>
+	  <br>
+	  <% if params[:diceNumber].to_i == session[:diceLandedOn].to_i %>
+	  <p align="middle"><img src="images/congrats1.gif" alt="Congratulations" width=30% height=30%>	</p>
+	  <br>
+	  <p align="middle">Congratulations!! You won <%= ((params[:betAmount].to_i) * 10) %> dollars! </p>
+	  <% $betPlaced = false %>
+	  <% else %>
+	  <p align="middle"><img src="images/Uhoh.gif" alt="Sorry" width=30% height=30%>	</p>
+	  <br>
+	  <p align="middle">Sorry!! You lost <%= (params[:betAmount].to_i) %> dollars.</p>
+	  <% $betPlaced = false %>
+      <% end %>
+	<% elsif $invalidInput %>  
+	  <p align="middle" style="color:red";><%= $invalidBet %></p>
+	  <% $invalidInput = false %>
+	<% end %>
+</form>
+</div>

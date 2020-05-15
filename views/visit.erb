@@ -1,0 +1,27 @@
+<html>
+<body>
+<h2>Welcome back <%= session[:name] %>!
+<br>
+<h4>Place your bet on dice number (1 to 6)</h4>
+<table style="width:100%">
+   <tr>
+   <td>
+   <div style="text-align:left">
+   <%= erb :bet_form %>
+   </div>
+   </td>
+   <td></td>
+   <td>
+   <div style="text-align:left; border:2px solid green">
+   <%= erb :ses_score_form %>
+   </div>
+   </td>
+   </tr>
+</table><br><br>
+   <div style="text-align:center;border:2px solid green;max-height:100px">
+   <p>Account</p>
+      <%= erb :acct_score_form %>
+   </div><br>
+   <a href="/logout" style="text-align:center">Logout</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+html {background-color: #ccc;}
+body {
+width:700px;
+height:900px;
+background-color:#dddcd9;
+margin:2em auto 2em;
+padding:25px;
+position:relative;
+}
+h1 {
+color:#a09b89
+}
+
+.container{ 
+    float:left; 
+    width:100%; 
+}
+.container div{ 
+    float:left;
+}
+
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
+
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  width: 200px;
+  line-height: 13px;
+  margin-bottom: 10px;
+}
+
+
+.boxed {
+  position: relative;
+  text-align: center;
+  border-style: solid;
+  border-width: 3px;
+  display: inline-block;
+}
+
+
+

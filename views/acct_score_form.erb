@@ -1,0 +1,15 @@
+<form class="form-inline well" action="/betting" method='post'>
+<table style="width:100%">
+    <tr>	
+        <th style="text-align:left"><label class="control-label">Total Win</label></th>
+        <th style="text-align:left"><label class="control-label">Total Loss</label></th>
+        <th style="text-align:left"><label class="control-label">Total Profit</label></th> 
+    </tr>
+	<tr>
+    <td style="text-align:right"><input id="Total Win" type="Integer" name="Total Win" class="form-control" value=<%= $acctTotWin %> readonly></td>
+    <td style="text-align:right"><input id="Total Loss" type="Integer" name="Total Loss" class="form-control" value=<%= $acctTotLoss %> readonly></td>
+    <td style="text-align:right"><input id="Total Profit" type="Integer" name="Total Profit" class="form-control" value=<%= $acctTotProfit %> readonly></td>
+    </tr>
+</table>	
+</form>
+

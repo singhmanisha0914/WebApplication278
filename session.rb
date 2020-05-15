@@ -6,6 +6,14 @@ configure do
   enable :sessions
 end
 
+configure :development do
+#setup sqlite database
+end
+
+configure :production do
+setup ENV[…] database
+end
+
 #defining route for the webpage
 get '/' do
   redirect '/login'

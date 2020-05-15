@@ -7,11 +7,11 @@ configure do
 end
 
 configure :development do
-#setup sqlite database
+setup sqlite database
 end
 
 configure :production do
-setup ENV[…] database
+#setup ENV[…] database
 end
 
 #defining route for the webpage

@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require './account'
 
 configure do
@@ -6,13 +7,13 @@ configure do
   enable :sessions
 end
 
-configure :development do
-setup sqlite database
-end
+#configure :development do
+#  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/users.db")
+#end
 
-configure :production do
-#setup ENV[…] database
-end
+#configure :production do
+#  DataMapper.setup(:default, ENV['DATABASE_URL'])
+#end
 
 #defining route for the webpage
 get '/' do

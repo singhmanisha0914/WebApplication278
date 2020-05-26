@@ -2,8 +2,7 @@ require 'sinatra'
 require 'dm-core'
 require 'dm-migrations'
 
-#
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/users.db")
+#DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/users.db")
 
 #create a model for user account
 class Account
@@ -22,6 +21,14 @@ end
 # Perform basic sanity checks and initialize all relationships
 DataMapper.finalize
 
-DataMapper.auto_upgrade!
+#DataMapper.auto_upgrade!
 #DataMapper.auto_migrate!
+
+configure :development, :test do
+DataMapper.setup(:default,"sqlite3://#{Dir.pwd}/users.db")
+end
+
+configure :production do
+DataMapper.setup(:default,ENV['DATABASE_URL'])
+end
 
